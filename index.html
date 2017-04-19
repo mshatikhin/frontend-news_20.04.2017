@@ -71,7 +71,7 @@
     <p>
         <a target="_blank"
            href="https://medium.com/devschacht/using-the-chrome-devtools-new-code-coverage-feature-6535bc26c97b">Новая
-            крутая тулза в Chrome Canary: Сoverage</a>
+            крутая тулза в Chrome Canary 59: Сoverage</a>
     </p>
     <p>
         Показывает соотношение кода, который реально отработал, и который просто лежит и ничего не делает для каждого
@@ -103,17 +103,22 @@
     <p>
         <a target="_blank" href="https://facebook.github.io/react/blog/2017/04/07/react-v15.5.0.html">React v15.5.0</a>
     </p>
-    <p>Переехали в отдельные пакеты<span style="color: #666">(есть план миграций)</span></p>
+    <p>Большой переезд</p>
     <ul>
         <li>
-            React.
-            <mark>PropTypes</mark>
+            React.PropTypes ->
+            <mark>prop-types</mark>
         </li>
         <li>
-            React.
-            <mark>createClass</mark>
+            React.createClass ->
+            <mark>create-react-class</mark>
+        </li>
+        <li>
+            TestUtils из react-addons-test-utils ->
+            <mark>react-dom/test-utils</mark>
         </li>
     </ul>
+    <p><span style="color: #666">(есть jscodeshift для миграции)</span></p>
 </section>
 
 <section class="slide">
@@ -133,7 +138,7 @@
         </li>
         <li>
             <a target="_blank" href="https://medium.com/@kentcdodds/introducing-glamorous-fb3c9f4ed20e">glamorous</a> -
-            стилизация компонентов
+            JSS стилизация компонентов с примесью JSX
         </li>
     </ul>
 </section>
@@ -151,6 +156,9 @@
                 оптимизировали</a>
         </li>
     </ul>
+    <div style="position: absolute; top: 100px; right: 200px;">
+        <img src="pictures/twitter.gif"/>
+    </div>
 </section>
 
 <section class="slide">
@@ -160,10 +168,26 @@
             нового</a>
     </p>
     <ul>
-        <li>Опция "--strict" включает общие параметры строгости</li>
-        <li>Поддержка генераторов и итераторов с таргетом ES3</li>
+        <li>Опция <mark>--strict</mark> включает общие параметры строгости</li>
+        <li>Поддержка генераторов и итераторов с таргетом <mark>ES3</mark></li>
         <li>Асинхронные генераторы и итераторы</li>
     </ul>
+    <div style="font-size: 13px;margin-top: -30px;text-align: left">
+        <pre>
+            <code>
+                <span style="color: #0000ff;">async function*</span> getItemsReallySlowly<T>(items: Iterable<T>) {
+                    <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">const</span> item of items) {
+                        <span style="color: #0000ff;">await</span> sleep(500);
+                        <span style="color: #0000ff;">yield</span> item;
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide">
+    <img src="pictures/red_y.png" class="cover"/>
 </section>
 
 <section class="slide">
